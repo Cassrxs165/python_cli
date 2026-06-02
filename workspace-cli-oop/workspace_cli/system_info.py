@@ -19,7 +19,7 @@ class SystemInfo:
         lines = [
             f"Hostname       : {socket.gethostname()}",
             f"User           : {os.getenv('USER', 'Unknown')}",
-            f"OS             : {self._command_output(['bash', '-lc', 'source /etc/os-release 2>/dev/null && echo \"$PRETTY_NAME\"'])}",
+            f"OS             : {self._command_output(['bash', '-lc', 'source /etc/os-release 2>/dev/null && echo $PRETTY_NAME'])}",
             f"Kernel         : {platform.release()}",
             f"Architecture   : {platform.machine()}",
             f"IP Address     : {self._ip_address()}",
